@@ -16,6 +16,7 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         return [
+            'title' => 'Product List',
             'products' => [
                 [
                     'name' => 'CD Player',
@@ -31,6 +32,28 @@ class DefaultController extends Controller
                 ],
                 [
                     'name' => 'iPad',
+                    'price' => 29.99
+                ]
+            ]
+        ];
+    }
+
+    /**
+     * @Route("/list", name="list")
+     * @Template()
+     */
+    public function listAction()
+    {
+        return [
+            'title' => 'Other List',
+
+            'products' => [
+                [
+                    'name' => 'iPad',
+                    'price' => 29.99
+                ],
+                [
+                    'name' => 'Computer',
                     'price' => 29.99
                 ]
             ]
